@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MVenAndInvMapper">
+	<insert id="batchInsert" parameterType="java.util.List">
+       insert into ven_and_inv (auto_id, c_ven_code, c_inv_code, 
+      i_supp_property, f_total_quota, f_finish_rate_up)
+       values
+       <foreach collection="list" item="item" index="index" separator=",">
+           (#{item.autoid},
+            #{item.cvencode},
+            #{item.cinvcode},
+		    #{item.isuppproperty},
+		    #{item.ftotalquota},
+		    #{item.ffinishrateup})
+       </foreach>
+       ON DUPLICATE KEY UPDATE 
+        auto_id = values(auto_id),
+        c_ven_code = values(c_ven_code),
+        c_inv_code = values(c_inv_code),
+        i_supp_property = values(i_supp_property),
+        f_total_quota = values(f_total_quota),
+        f_finish_rate_up = values(f_finish_rate_up)
+
+   </insert>  
+</mapper>

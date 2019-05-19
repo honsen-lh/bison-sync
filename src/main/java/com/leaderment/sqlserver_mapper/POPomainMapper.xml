@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.POPomainMapper">
+  <sql id="Require_Column_List">
+    POID, cPOID, dPODate, cVenCode, cDepCode,  
+    cexch_name as cexchName, nflat, iTaxRate,cMemo, cState, cMaker, 
+    cVerifier, cCloser, cDefine1, cDefine2,
+    iVTid, cChanger, cBusType,
+    cmaketime, cModifyTime, cAuditTime, cAuditDate, cModifyDate, cReviser, 
+    cVenPUOMProtocol, cChangVerifier, cChangAuditTime, cChangAuditDate, 
+    dCloseDate, dCloseTime, 
+    cContactCode, cVenPerson,  csysbarcode, 
+    cCurrentAuditor
+  </sql>
+  
+  <select id="selectRequire"  resultType="com.leaderment.sqlserver_pojo.POPomainVO">
+    select 
+    <include refid="Require_Column_List" />
+    from PO_Pomain
+  </select>
+</mapper>

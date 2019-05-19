@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MRdrecords08Mapper">
+  	<insert id="batchInsert" parameterType="java.util.List">
+       insert into rdrecords08 (auto_id, id, c_inv_code, 
+      i_quantity, i_unit_cost, i_price, 
+      c_batch, i_tr_ids, c_define23, 
+      c_define24, i_nquantity, c_baccounter, 
+      db_keep_date, b_costing, i_row_no, 
+      i_group_no, c_bsysbar_code)
+       values
+       <foreach collection="list" item="item" index="index" separator=",">
+	       	  (#{item.autoid},
+	       	  #{item.id},
+	       	  #{item.cinvcode},
+		      #{item.iquantity},
+		      #{item.iunitcost},
+		      #{item.iprice},
+		      #{item.cbatch},
+		      #{item.itrids},
+		      #{item.cdefine23},
+		      #{item.cdefine24},
+		      #{item.inquantity},
+		      #{item.cbaccounter},
+		      #{item.dbkeepdate},
+		      #{item.bcosting},
+		      #{item.irowno},
+		      #{item.igroupno},
+		      #{item.cbsysbarcode}
+            	)
+       </foreach>
+       ON DUPLICATE KEY UPDATE 
+       	 	  auto_id = values(auto_id),
+	       	  id = values(id),
+	       	  c_inv_code = values(c_inv_code),
+		      i_quantity = values(i_quantity),
+		      i_unit_cost = values(i_unit_cost),
+		      i_price = values(i_price),
+		      c_batch = values(c_batch),
+		      i_tr_ids = values(i_tr_ids),
+		      c_define23 = values(c_define23),
+		      c_define24 = values(c_define24),
+		      i_nquantity = values(i_nquantity),
+		      c_baccounter = values(c_baccounter),
+		      db_keep_date = values(db_keep_date),
+		      b_costing = values(b_costing),
+		      i_row_no = values(i_row_no),
+		      i_group_no = values(i_group_no),
+		      c_bsysbar_code = values(c_bsysbar_code)
+   </insert>  
+  
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.Rdrecords01Mapper">
+	<sql id="Require_Column_List">
+		autoId,
+	    id,
+	    cInvCode,
+	    iQuantity,
+	    iUnitCost,
+	    iPrice,
+	    iAprice,
+	    cBatch,
+	    dSdate,
+	    iSquantity,
+	    iSnum,
+	    iMoney,
+	    cDefine23,
+	    cDefine24,
+	    iPosId,
+	    fAcost,
+	    iNQuantity,
+	    chVenCode,
+	    iArrsId,
+	    iOriTaxCost,
+	    iOriCost,
+	    iOriMoney,
+	    iOriTaxPrice,
+	    iOriSum,
+	    iTaxRate,
+	    iTaxPrice,
+	    iSum,
+	    bTaxCost,
+	    cPoId,
+	    cBaccounter,
+	    dbKeepdate,
+	    bCosting,
+	    iSumBillQuantity,
+	    cBarvcode,
+	    dBarvdate,
+	    corufts,
+	    iRowNo,
+	    cBsysbarCode
+	</sql>
+  	<select id="selectRequire"  resultType="com.leaderment.sqlserver_pojo.Rdrecords01VO">
+    select 
+    <include refid="Require_Column_List" />
+    from rdrecords01
+  </select>
+</mapper>

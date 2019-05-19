@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.VendorMapper">
+  <sql id="Require_Column_List">
+  	 cVenCode,
+	 cVenName,
+     cVenAbbName,
+     cVCCode,
+     cVenAddress,
+     dVenDevDate,
+     cVenEmail,
+     cVenPerson,
+     cVenHand,
+     cVenHeadCode,
+     bVenTax,
+     cCreatePerson,
+     cModifyPerson,
+     dModifyDate,
+     cVenExch_name AS cVenExchName,
+     cVenPUOMProtocol,
+     iVenTaxRate,
+     dVenCreateDatetime,
+     cVenMnemCode,
+     cVenContactCode
+  </sql>
+  <select id="selectRequire"  resultType="com.leaderment.sqlserver_pojo.VendorVO">
+    select 
+    <include refid="Require_Column_List" />
+    from Vendor
+  </select>
+</mapper>

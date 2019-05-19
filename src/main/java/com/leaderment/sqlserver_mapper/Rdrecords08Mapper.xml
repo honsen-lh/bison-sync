@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.Rdrecords08Mapper">
+  	<sql id="Require_Column_List">
+		autoid,
+		id,
+		cinvcode,
+		iquantity,
+		iunitcost,
+		iprice,
+		cbatch,
+		itrids,
+		cdefine23,
+		cdefine24,
+		inquantity,
+		cbaccounter,
+		dbkeepdate,
+		bcosting,
+		irowno,
+		igroupno,
+		cbsysbarcode
+
+	</sql>
+  	<select id="selectRequire"  resultType="com.leaderment.sqlserver_pojo.Rdrecords08VO">
+    select 
+    <include refid="Require_Column_List" />
+    from rdrecords08
+  </select>
+  
+</mapper>

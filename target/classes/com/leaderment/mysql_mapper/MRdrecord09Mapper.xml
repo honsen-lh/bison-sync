@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MRdrecord09Mapper">
+	<insert id="batchInsert" parameterType="java.util.List">
+  	insert into rdrecord09 (id, b_rd_flag,c_vouch_type,c_bus_type, c_source, c_wh_code, 
+      d_date, c_code, c_rd_code ,
+      c_dep_code, c_pt_code, c_ven_code,
+      c_order_code, c_arv_code, c_handler,
+      c_memo, b_trans_flag, c_maker, 
+      c_define1, c_define2, d_veri_date, 
+      d_arv_date, vt_id, 
+      c_modify_person, d_modify_date, d_make_time, 
+      d_modify_time, d_verify_time,
+       c_pzid, c_sysbar_code, 
+      c_check_sign_flag)
+  	values
+  	 <foreach collection="list" item="item" index="index" separator=",">
+  	   		(#{item.id},
+            #{item.brdflag},
+            #{item.cvouchtype},
+            #{item.cbustype} ,
+		    #{item.csource},
+		    #{item.cwhcode},
+		    #{item.ddate},
+		    #{item.ccode},
+		    #{item.crdcode},
+		    #{item.cdepcode},
+		    #{item.cptcode},
+		    #{item.cvencode},
+		    #{item.cordercode},
+		    #{item.carvcode},
+		    #{item.chandler},
+		    #{item.cmemo},
+		    #{item.btransflag},
+		    #{item.cmaker},
+		    #{item.cdefine1},
+		    #{item.cdefine2},
+		    #{item.dveridate},
+		    #{item.darvdate},
+		    #{item.vtid},
+		    #{item.cmodifyperson},
+		    #{item.dmodifydate},
+		    #{item.dnmaketime},
+		    #{item.dnmodifytime},
+		    #{item.dnverifytime},
+		    #{item.cpzid},
+		    #{item.csysbarcode},
+		    #{item.cchecksignflag}
+            )
+  	 </foreach>
+  	 ON DUPLICATE KEY UPDATE 
+          id = values(id),
+          b_rd_flag = values(b_rd_flag),
+          c_vouch_type = values(c_vouch_type),
+          c_bus_type = values(c_bus_type), 
+	      c_source = values(c_source), 
+	      c_wh_code = values(c_wh_code), 
+	      d_date = values(d_date), 
+	      c_code = values(c_code), 
+	      c_rd_code = values(c_rd_code) , 
+	      c_dep_code = values(c_dep_code), 
+	      c_pt_code = values(c_pt_code), 
+	      c_ven_code = values(c_ven_code), 
+	      c_order_code = values(c_order_code), 
+	      c_arv_code = values(c_arv_code), 
+	      c_handler = values(c_handler), 
+	      c_memo = values(c_memo), 
+	      b_trans_flag = values(b_trans_flag),
+	      c_maker = values(c_maker), 
+	      c_define1 = values(c_define1), 
+	      c_define2 = values(c_define2), 
+	      d_veri_date = values(d_veri_date), 
+	      d_arv_date = values(d_arv_date), 
+	      vt_id = values(vt_id), 
+	      c_modify_person = values(c_modify_person), 
+	      d_modify_date = values(d_modify_date), 
+	      d_make_time = values(d_make_time), 
+	      d_modify_time = values(d_modify_time), 
+	      d_verify_time = values(d_verify_time), 
+	      c_pzid = values(c_pzid), 
+	      c_sysbar_code = values(c_sysbar_code), 
+	      c_check_sign_flag = values(c_check_sign_flag)
+  </insert>
+
+
+</mapper>
