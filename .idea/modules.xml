@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-helper/bison-file-transfer-helper.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-helper/bison-file-transfer-helper.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-server/bison-file-transfer-server.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-server/bison-file-transfer-server.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-job-common/bison-job-common.iml" filepath="D:/svn-workspace/bison-job-service/bison-job-common/bison-job-common.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-job-service.iml" filepath="D:/svn-workspace/bison-job-service/bison-job-service.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-mws-job-service/bison-mws-job-service.iml" filepath="D:/svn-workspace/bison-job-service/bison-mws-job-service/bison-mws-job-service.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-mws-job-service/bison-mws-request-report/bison-mws-request-report.iml" filepath="D:/svn-workspace/bison-job-service/bison-mws-job-service/bison-mws-request-report/bison-mws-request-report.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-quartz/bison-quartz.iml" filepath="D:/svn-workspace/bison-job-service/bison-quartz/bison-quartz.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-advertising/bison-sc-advertising.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-advertising/bison-sc-advertising.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-bussiness-report/bison-sc-bussiness-report.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-bussiness-report/bison-sc-bussiness-report.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-fulfilled-order/bison-sc-fulfilled-order.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-fulfilled-order/bison-sc-fulfilled-order.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-inventory/bison-sc-inventory.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-inventory/bison-sc-inventory.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-payment/bison-sc-payment.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-payment/bison-sc-payment.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sellercentral-job-service.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sellercentral-job-service.iml" />
+      <module fileurl="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sellercentral-login/bison-sellercentral-login.iml" filepath="D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sellercentral-login/bison-sellercentral-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bison-sync.iml" filepath="$PROJECT_DIR$/.idea/bison-sync.iml" />
+      <module fileurl="file://D:/svn-workspace/inventory/bison-winit-inventory/bison-winit-inventory.iml" filepath="D:/svn-workspace/inventory/bison-winit-inventory/bison-winit-inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../winit2db/winit2db.iml" filepath="$PROJECT_DIR$/../winit2db/winit2db.iml" />
+    </modules>
+  </component>
+</project>

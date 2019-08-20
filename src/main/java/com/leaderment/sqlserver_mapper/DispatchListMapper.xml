@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.DispatchListMapper">
+  <sql id="Require_Column_List">
+    dlid,
+    cdlcode,
+    cvouchtype,
+    cstcode,
+    ddate,
+    crdcode,
+    cdepcode,
+    cpersoncode,
+    sbvid,
+    csbvcode,
+    csocode,
+    ccuscode,
+    cexch_name AS cexchName,
+    iexchrate,
+    itaxrate,
+    bfirst,
+    breturnflag,
+    bsettleall,
+    cmemo,
+    csaleout,
+    cdefine1,
+    cverifier,
+    cmaker,
+    inetlock,
+    isale,
+    ccusname,
+    ivtid,
+    cbustype,
+    ccloser,
+    caccounter,
+    ccrechpname,
+    cdefine11,
+    cdefine12,
+    cdefine13,
+    cdefine14,
+    biafirst,
+    bcredit,
+    caddcode,
+    iverifystate,
+    ireturncount,
+    iswfcontrolled,
+    icreditstate,
+    barfirst,
+    cmodifier,
+    dmoddate,
+    dverifydate,
+    ccusperson,
+    dcreatesystime,
+    dverifysystime,
+    dmodifysystime,
+    csvouchtype,
+    iflowid,
+    bsigncreate,
+    bcashsale,
+    bneedbill,
+    baccswitchflag,
+    iprintcount,
+    bsaleoutcreatebill,
+    csysbarcode,
+    cinvoicecompany,
+    bnottogoldtax
+  </sql>
+  <select id="selectRequire" resultType="com.leaderment.sqlserver_pojo.DispatchListVO">
+    select
+    <include refid="Require_Column_List"/>
+
+    from DispatchList
+  </select>
+</mapper>

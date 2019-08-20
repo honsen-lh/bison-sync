@@ -3,6 +3,7 @@ package com.leaderment.handler;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +19,11 @@ public class JobHandler{
 	@Autowired
 	@Qualifier("JobServiceImpl")
 	private IJobService jobService;
-
+	
+	
+	@Scheduled(cron="0 0 19 * * ?")
 	@RequestMapping(value="/{subscribeId}")
-	public void doJob(@PathVariable Integer subscribeId) {
+	public void doJob() {
 		LOGGER.info("start_dojob======");
 		jobService.doJob();
 		LOGGER.info("ok_dojob======");

@@ -1,25 +1,19 @@
 server:
   port: 80
-logging:
-  file: springboot.log
-  level:
-    root: INFO #默认INFO
+
    
 spring:
   datasource:
     db1:
-      #url: jdbc:mysql://bison-mysql.leaderment.com:3306/bison_amz_product_inventory?useUnicode=true&characterEncoding=utf8&useSSL=false
-      #username: bisonUser
-      #url: jdbc:mysql://lmdevnts0001.leaderment.com:3306/bison_amz_product_inventory?useUnicode=true&characterEncoding=utf8&useSSL=false
+      url: jdbc:mysql://bison-mysql.leaderment.com:3306/u8?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: bisonUser
+      #url: jdbc:mysql://lmdevnts0001.leaderment.com:3306/u8?useUnicode=true&characterEncoding=utf8&useSSL=false
       #username: root
-      #password: Ldm_1910%
-      url: jdbc:mysql://localhost:3306/bison_amz_product_inventory?useUnicode=true&characterEncoding=utf8&useSSL=false
-      username: root
-      password: 123456
+      password: Ldm_1910%
       type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: com.mysql.jdbc.Driver 
     db2:
-      url: jdbc:sqlserver://10.0.8.7:1433;DatabaseName=UFDATA_801_2018
+      url: jdbc:sqlserver://192.168.1.226:1433;DatabaseName=UFDATA_801_2018
       username: sa
       password: D0llioU83
       type: com.alibaba.druid.pool.DruidDataSource    

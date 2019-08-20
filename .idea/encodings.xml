@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://D:/svn-workspace/bison-job-service" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-job-common" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-mws-job-service" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-mws-job-service/bison-mws-request-report" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-quartz" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-helper" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-file-transfer-server" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-advertising" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-bussiness-report" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-fulfilled-order" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-inventory" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sc-payment" charset="UTF-8" />
+    <file url="file://D:/svn-workspace/bison-job-service/bison-sellercentral-job-service/bison-sellercentral-login" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../winit2db" charset="UTF-8" />
+  </component>
+</project>

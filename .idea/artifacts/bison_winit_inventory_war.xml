@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bison-winit-inventory:war">
+    <output-path>D:/svn-workspace/inventory/bison-winit-inventory/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>bison-winit-inventory</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="bison-winit-inventory.war">
+      <element id="artifact" artifact-name="bison-winit-inventory:war exploded" />
+    </root>
+  </artifact>
+</component>

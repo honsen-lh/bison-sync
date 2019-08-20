@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MVenInvPriceMapper">
+
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into ven_Inv_Price (Autoid, cVenCode, cInvCode,
+      dEnableDate, dDisableDate, cExch_Name, 
+      bPromotion, cMemo, iSupplyType, 
+      btaxcost, cTermCode, iLowerLimit, 
+      iUpperLimit, iUnitPrice, iTaxRate, 
+      iTaxUnitPrice, ipriceautoid)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.autoid},
+      #{item.cvencode},
+      #{item.cinvcode},
+      #{item.denabledate},
+      #{item.ddisabledate},
+      #{item.cexchName},
+      #{item.bpromotion},
+      #{item.cmemo},
+      #{item.isupplytype},
+      #{item.btaxcost},
+      #{item.ctermcode},
+      #{item.ilowerlimit},
+      #{item.iupperlimit},
+      #{item.iunitprice},
+      #{item.itaxrate},
+      #{item.itaxunitprice},
+      #{item.ipriceautoid})
+    </foreach>
+    ON DUPLICATE KEY UPDATE
+    Autoid = values(Autoid),
+    cVenCode = values(cVenCode),
+    cInvCode = values(cInvCode),
+    dEnableDate = values(dEnableDate),
+    dDisableDate = values(dDisableDate),
+    cExch_Name = values(cExch_Name),
+    bPromotion = values(bPromotion),
+    cMemo = values(cMemo),
+    iSupplyType = values(iSupplyType),
+    btaxcost = values(btaxcost),
+    cTermCode = values(cTermCode),
+    iLowerLimit = values(iLowerLimit),
+    iUpperLimit = values(iUpperLimit),
+    iUnitPrice = values(iUnitPrice),
+    iTaxRate = values(iTaxRate),
+    iTaxUnitPrice = values(iTaxUnitPrice),
+    ipriceautoid = values(ipriceautoid)
+  </insert>
+
+</mapper>

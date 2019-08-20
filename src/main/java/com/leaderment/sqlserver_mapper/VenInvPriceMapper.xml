@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.VenInvPriceMapper">
+
+  <sql id="Require_Column_List">
+    Autoid, cVenCode, cInvCode, dEnableDate, dDisableDate, cExch_Name as cexchName, bPromotion, cMemo,
+    iSupplyType, btaxcost, cTermCode, iLowerLimit, iUpperLimit, iUnitPrice, iTaxRate, 
+    iTaxUnitPrice, ipriceautoid
+  </sql>
+  <select id="selectRequire"  resultType="com.leaderment.sqlserver_pojo.VenInvPriceVO">
+    select
+    <include refid="Require_Column_List" />
+    from Ven_Inv_Price
+  </select>
+
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.InventoryMapper">
+    <sql id="Require_Column_List">
+        cinvcode,
+
+        cinvaddcode,
+        
+        cinvname,
+        
+        cinvstd,
+        
+        cinvccode,
+        
+        cvencode,
+        
+        creplaceitem,
+        
+        cposition,
+        
+        bsale,
+        
+        bpurchase,
+        
+        bself,
+        
+        bcomsume,
+        
+        bproducing,
+        
+        bservice,
+        
+        baccessary,
+        
+        itaxrate,
+        
+        dsdate,
+        
+        dedate,
+        
+        cinvdefine1,
+        
+        I_id AS iId,
+        
+        ccreateperson,
+        
+        cmodifyperson,
+        
+        dmodifydate,
+        
+        cvaluetype,
+        
+        cplanmethod,
+        
+        bmps,
+        
+        brop,
+        
+        breplan,
+        
+        csrpolicy,
+        
+        bbillunite,
+        
+        cshopunit,
+        
+        fconvertrate,
+        
+        binvmodel,
+        
+        bkccutmantissa,
+        
+        breceiptbydt,
+        
+        iimptaxrate,
+        
+        iplandefault,
+        
+        iallocateprintdgt,
+        
+        bcheckbatch,
+        
+        bmngoldpart
+  </sql>
+    <select id="selectRequire" resultType="com.leaderment.sqlserver_pojo.InventoryVO">
+        select
+        <include refid="Require_Column_List"/>
+
+        from Inventory
+    </select>
+</mapper>

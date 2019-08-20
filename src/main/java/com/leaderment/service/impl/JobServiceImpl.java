@@ -2,41 +2,14 @@ package com.leaderment.service.impl;
 
 import java.util.List;
 
+import com.leaderment.mysql_mapper.*;
+import com.leaderment.sqlserver_mapper.*;
+import com.leaderment.sqlserver_pojo.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.leaderment.mysql_mapper.MRdrecord01Mapper;
-import com.leaderment.mysql_mapper.MRdrecord08Mapper;
-import com.leaderment.mysql_mapper.MRdrecord09Mapper;
-import com.leaderment.mysql_mapper.MRdrecords01Mapper;
-import com.leaderment.mysql_mapper.MRdrecords08Mapper;
-import com.leaderment.mysql_mapper.MRdrecords09Mapper;
-import com.leaderment.mysql_mapper.MVenAndInvMapper;
-import com.leaderment.mysql_mapper.PoPodetailsMapper;
-import com.leaderment.mysql_mapper.PoPomainMapper;
-import com.leaderment.mysql_mapper.SupplierMapper;
 import com.leaderment.service.IJobService;
-import com.leaderment.sqlserver_mapper.POPodetailsMapper;
-import com.leaderment.sqlserver_mapper.POPomainMapper;
-import com.leaderment.sqlserver_mapper.RdRecord01Mapper;
-import com.leaderment.sqlserver_mapper.RdRecord08Mapper;
-import com.leaderment.sqlserver_mapper.RdRecord09Mapper;
-import com.leaderment.sqlserver_mapper.Rdrecords01Mapper;
-import com.leaderment.sqlserver_mapper.Rdrecords08Mapper;
-import com.leaderment.sqlserver_mapper.Rdrecords09Mapper;
-import com.leaderment.sqlserver_mapper.VenAndInvMapper;
-import com.leaderment.sqlserver_mapper.VendorMapper;
-import com.leaderment.sqlserver_pojo.POPodetailsVO;
-import com.leaderment.sqlserver_pojo.POPomainVO;
-import com.leaderment.sqlserver_pojo.RdRecord01VO;
-import com.leaderment.sqlserver_pojo.RdRecord08VO;
-import com.leaderment.sqlserver_pojo.RdRecord09VO;
-import com.leaderment.sqlserver_pojo.Rdrecords01VO;
-import com.leaderment.sqlserver_pojo.Rdrecords08VO;
-import com.leaderment.sqlserver_pojo.VenAndInvVO;
-import com.leaderment.sqlserver_pojo.VendorVO;
-import com.leaderment.sqlserver_pojo.rdrecords09VO;
 
 @Service("JobServiceImpl")
 public class JobServiceImpl implements IJobService{
@@ -65,7 +38,6 @@ public class JobServiceImpl implements IJobService{
 	MRdrecords01Mapper mRdrecords01Mapper;
 	@Autowired
 	Rdrecords01Mapper rdRecords01Mapper;
-	
 	@Autowired
 	MRdrecord09Mapper mRdrecord09Mapper;
 	@Autowired
@@ -82,7 +54,22 @@ public class JobServiceImpl implements IJobService{
 	MRdrecords08Mapper mRdrecords08Mapper;
 	@Autowired
 	Rdrecords08Mapper rdRecords08Mapper;
-	
+	@Autowired
+	MInventoryMapper mInventoryMapper;
+	@Autowired
+	InventoryMapper inventoryMapper;
+	@Autowired
+	MDispatchListMapper mdispatchListMapper;
+	@Autowired
+	DispatchListMapper dispatchListMapper;
+	@Autowired
+	MDispatchListsMapper mdispatchListsMapper;
+	@Autowired
+	DispatchListsMapper dispatchListsMapper;
+	@Autowired
+	MVenInvPriceMapper mVenInvPriceMapper;
+	@Autowired
+	VenInvPriceMapper venInvPriceMapper;
 	@Override
 	public void doJob() {
 		//同步供应商表
@@ -91,7 +78,6 @@ public class JobServiceImpl implements IJobService{
 		List<VendorVO> vendorVOList = vendorMapper.selectRequire();
 		supplierMapper.batchInsert(vendorVOList);
 		LOGGER.info("end_syncVendor...");
-		//同步其他表...
 		//同步供应商关系表
 		List<VenAndInvVO> venAndInvVOList = sqlServerVenAndInvMapper.selectRequire();
 		mysqlVenAndInvMapper.batchInsert(venAndInvVOList);
@@ -135,5 +121,28 @@ public class JobServiceImpl implements IJobService{
 		List<Rdrecords08VO> rdRecords08VOList = rdRecords08Mapper.selectRequire();
 		mRdrecords08Mapper.batchInsert(rdRecords08VOList);
 		LOGGER.info("end_syncRdrecords08...");
+		//同步存货档案表 inventory
+		/*LOGGER.info("start_syncInventory...");
+		List<InventoryVO> inventoryVOList = inventoryMapper.selectRequire();
+		mInventoryMapper.batchInsert(inventoryVOList);
+		LOGGER.info("end_syncInventory...");*/
+		//同步发货退货单主表 DispatchList
+		LOGGER.info("start_syncDispatchList...");
+		List<DispatchListVO> dispatchListVOList = dispatchListMapper.selectRequire();
+		mdispatchListMapper.batchInsert(dispatchListVOList);
+		LOGGER.info("end_syncDispatchList...");
+		//同步发货退货单子表 DispatchList
+		LOGGER.info("start_syncDispatchLists...");
+		/*List<DispatchListsVO> dispatchListsVOList= dispatchListsMapper.selectRequire();
+		for (DispatchListsVO dispatchListsVO : dispatchListsVOList) {
+			mdispatchListsMapper.insertDispatchListsVO(dispatchListsVO);
+		}*/
+		//mdispatchListsMapper.batchInsert(dispatchListsVOList);
+		LOGGER.info("end_syncDispatchLists...");
+		//同步供应商存货价格表 Ven_Inv_Price
+		LOGGER.info("start_syncVen_Inv_Price...");
+		List<VenInvPriceVO> invPriceVOList = venInvPriceMapper.selectRequire();
+		mVenInvPriceMapper.batchInsert(invPriceVOList);
+		LOGGER.info("end_syncVen_Inv_Price...");
 	}
 }
