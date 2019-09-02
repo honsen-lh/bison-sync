@@ -6,48 +6,24 @@ import java.util.Date;
 
 public class Rdrecords32VO {
 	private Long AutoID;
-
     private Long ID;
-
-
     private String cInvCode;
-
     private BigDecimal iQuantity;
-
     private String cBatch;
-
     private String cDefine22;
-
     private String cDefine23;
-
     private String cDefine24;
-
-
 	private Long iDLsID;
-
 	private Byte bCosting;
-
 	private String cbdlcode;
-
     private String corufts;
-
     private int smallint;
-
     private int iorderdid;
-
     private int iorderseq;
-
     private int  ipesotype;
-
     private String cpesocode;
-
     private String csocode;
-
     private int irowno;
-
-
-    private Date rowufts;
-
     private String cbsysbarcode;
 
 
@@ -203,13 +179,7 @@ public class Rdrecords32VO {
 		this.irowno = irowno;
 	}
 
-	public Date getRowufts() {
-		return rowufts;
-	}
 
-	public void setRowufts(Date rowufts) {
-		this.rowufts = rowufts;
-	}
 
 	public String getCbsysbarcode() {
 		return cbsysbarcode;
@@ -242,7 +212,7 @@ public class Rdrecords32VO {
 		sb.append(", cpesocode='").append(cpesocode).append('\'');
 		sb.append(", csocode='").append(csocode).append('\'');
 		sb.append(", irowno=").append(irowno);
-		sb.append(", rowufts=").append(rowufts);
+
 		sb.append(", cbsysbarcode='").append(cbsysbarcode).append('\'');
 		sb.append('}');
 		return sb.toString();

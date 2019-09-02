@@ -1,14 +1,15 @@
 server:
-  port: 80
+  port: 8088
+
 
    
 spring:
   datasource:
     db1:
-      url: jdbc:mysql://bison-mysql.leaderment.com:3306/u8?useUnicode=true&characterEncoding=utf8&useSSL=false
-      username: bisonUser
-      #url: jdbc:mysql://lmdevnts0001.leaderment.com:3306/u8?useUnicode=true&characterEncoding=utf8&useSSL=false
-      #username: root
+     # url: jdbc:mysql://bison-mysql.leaderment.com:3306/u8?useUnicode=true&characterEncoding=utf8&useSSL=false
+      #username: bisonUser
+      url: jdbc:mysql://lmdevnts0001.leaderment.com:3306/U8?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
       password: Ldm_1910%
       type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: com.mysql.jdbc.Driver 
@@ -18,3 +19,7 @@ spring:
       password: D0llioU83
       type: com.alibaba.druid.pool.DruidDataSource    
       driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+mybatis:
+  mapper-locations: /home/leaderment/idea-workspace/bison-sync/src/main/java/com/leaderment/sqlserver_mapper/*.xml,/home/leaderment/idea-workspace/bison-sync/src/main/java/com/leaderment/mysql_mapper/*.xml
+  type-aliases-package: com.leaderment.mysql_mapper,com.leaderment.sqlserver_mapper

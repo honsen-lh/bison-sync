@@ -4,53 +4,27 @@ import java.util.Date;
 
 public class RdRecord32VO {
 	private Long ID;
-
 	private Byte bRdFlag;
-
 	private String cVouchType;
-
 	private String cBusType;
-
 	private String cSource;
-
-	private String cWhCode;
-
 	private String cBusCode;
-
+	private String cWhCode;
 	private Date dDate;
-
 	private String cCode;
-
 	private String cRdCode;
-
 	private String cDepCode;
-
 	private String cCusCode;
-
 	private String cHandler;
-
 	private String cMaker;
-
-
 	private String cDefine1;
-
 	private Date dVeriDate;
-
-
 	private Integer VT_ID;
-
 	private String cDefine14;
-
-
-
 	private Date dnmaketime;
-
-
-
+	private Date dnverifytime;
 	private String csysbarcode;
-
 	private String cCheckSignFlag;
-
 
 	public Long getID() {
 		return ID;
@@ -222,6 +196,14 @@ public class RdRecord32VO {
 
 	public void setcCheckSignFlag(String cCheckSignFlag) {
 		this.cCheckSignFlag = cCheckSignFlag;
+	}
+
+	public Date getDnverifytime() {
+		return dnverifytime;
+	}
+
+	public void setDnverifytime(Date dnverifytime) {
+		this.dnverifytime = dnverifytime;
 	}
 
 	@Override
