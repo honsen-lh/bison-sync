@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MRdrecords32Mapper">
+
+
+	<insert id="batchInsert" parameterType="java.util.List">
+  	insert into rdrecords32
+  	values
+  	 <foreach collection="list" item="item" index="index" separator=",">
+  	   		(
+  	   		#{item.AutoID},
+  	   		#{item.ID},
+            #{item.cInvCode},
+            #{item.iQuantity},
+		 	#{item.cBatch},
+		 	#{item.cDefine22} ,
+			#{item.cDefine23},
+		 	#{item.cDefine24},
+		 	#{item.iDLsID},
+		    #{item.bCosting},
+		    #{item.cbdlcode},
+		    #{item.corufts},
+		    #{item.iorderdid},
+		    #{item.iorderseq},
+		    #{item.ipesotype},
+		    #{item.cpesocode},
+		    #{item.csocode},
+		    #{item.irowno},
+		    #{item.cbsysbarcode}
+		    )
+  	 </foreach>
+  	 ON DUPLICATE KEY UPDATE
+	    AutoID = values(AutoID),
+		ID = values(ID),
+		cInvCode = values(cInvCode),
+		iQuantity = values(iQuantity),
+		cBatch = values(cBatch),
+		cDefine22 = values(cDefine22),
+		cDefine23 = values(cDefine23),
+		cDefine24 = values(cDefine24),
+		iDLsID = values(iDLsID),
+		bCosting = values(bCosting),
+		cbdlcode = values(cbdlcode) ,
+		corufts = values(corufts),
+		iorderdid = values(iorderdid),
+		iorderseq = values(iorderseq),
+		ipesotype = values(ipesotype),
+		cpesocode = values(cpesocode),
+		csocode = values(csocode),
+		irowno = values(irowno),
+		cbsysbarcode = values(cbsysbarcode)
+  </insert>
+
+
+</mapper>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.mysql_mapper.MRdrecord32Mapper">
+
+
+	<insert id="batchInsert" parameterType="java.util.List">
+  	insert into rdrecord32
+  	values
+  	 <foreach collection="list" item="item" index="index" separator=",">
+  	   		(#{item.ID},
+            #{item.bRdFlag},
+            #{item.cVouchType},
+		 	#{item.cSource},
+		 	#{item.cBusType} ,
+			#{item.cBusCode},
+		 	#{item.cWhCode},
+		 	#{item.dDate},
+		    #{item.cCode},
+		    #{item.cRdCode},
+		    #{item.cDepCode},
+		    #{item.cCusCode},
+		    #{item.cHandler},
+		    #{item.cMaker},
+		    #{item.cDefine1},
+		    #{item.dVeriDate},
+		    #{item.VT_ID},
+		    #{item.cDefine14},
+		    #{item.dnmaketime},
+		    #{item.dnverifytime},
+		    #{item.csysbarcode},
+		    #{item.cCheckSignFlag}
+            )
+  	 </foreach>
+  	 ON DUPLICATE KEY UPDATE
+		ID = values(ID),
+		bRdFlag = values(bRdFlag),
+		cVouchType = values(cVouchType),
+		cSource = values(cSource),
+		cBusType = values(cBusType),
+		cBusCode = values(cBusCode),
+		cWhCode = values(cWhCode),
+		dDate = values(dDate),
+		cCode = values(cCode),
+		cRdCode = values(cRdCode) ,
+		cDepCode = values(cDepCode),
+		cCusCode = values(cCusCode),
+		cHandler = values(cHandler),
+		cMaker = values(cMaker),
+		cDefine1 = values(cDefine1),
+		dVeriDate = values(dVeriDate),
+		VT_ID = values(VT_ID),
+		cDefine14 = values(cDefine14),
+		dnmaketime = values(dnmaketime),
+		dnverifytime = values(dnverifytime),
+		csysbarcode = values(csysbarcode),
+		cCheckSignFlag = values(cCheckSignFlag)
+  </insert>
+
+
+</mapper>

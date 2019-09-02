@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import com.leaderment.mysql_pojo.PoPomain;
 import com.leaderment.sqlserver_pojo.POPomainVO;
 
+
 public interface PoPomainMapper {
     int deleteByPrimaryKey(@Param("poId") Integer poId, @Param("cModifyTime") Date cModifyTime);
 

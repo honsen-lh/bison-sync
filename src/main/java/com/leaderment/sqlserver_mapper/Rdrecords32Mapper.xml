@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leaderment.sqlserver_mapper.Rdrecords32Mapper">
+
+
+    <select id="selectRequireLimit" parameterType="java.lang.Integer" resultType="com.leaderment.sqlserver_pojo.Rdrecords32VO">
+        select * from rdrecords32
+            where AutoID in (
+                            select top ${pageSize} AutoID from rdrecords32
+                            where AutoID
+                            not in (
+                            <if test="pageNumber == 0">  select top ${pageNumber} AutoID from rdrecords32</if>
+                             <if test="pageNumber != 0"> select top ${pageSize} AutoID from rdrecords32</if>
+                                 )
+                            )
+    </select>
+
+</mapper>
